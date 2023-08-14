@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Registro de Productos</title>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"  rel="stylesheet" type="text/css"/>
+		
+	</head>
+	<body>
+		<div class="container my-2">
+			<h1>Registro de Productos</h1>
+			<form th:action="@{/guardarProducto}" th:object="${producto}" method="post">
+				<label for="nombre" class="control-label">Nombre*:</label>
+				<input type="text" name="nombre" th:field="*{nombre}" class="form-control mb-4 col-4" placeholder="Ingrese nombre del producto"/>
+				<label for="precio" class="control-label">Precio*:</label>
+				<input type="text" name="precio" th:field="*{precio}" class="form-control mb-4 col-4" placeholder="Ingrese su precio"/>
+				<label for="cantidad" class="control-label">Cantidad*:</label>
+				<input type="text" name="cantidad" th:field="*{cantidad}" class="form-control mb-4 col-4" placeholder="Ingrese la cantidad"/>
+				<button type="submit" class="btn btn-info col-2">Registrar Producto</button>
+			</form>
+			<hr>
+			<!-- enlace para regresar a listar-->
+			<a th:href="@{/}">Regresar</a>
+		</div>
+	</body>
+</html>
